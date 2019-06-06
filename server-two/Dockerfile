@@ -1,7 +1,7 @@
 FROM openjdk:8-jdk-alpine
-
 MAINTAINER August
-VOLUME /tmp
+VOLUME /interlude
+ADD target/server-two.jar /interlude/app.jar
+CMD [ "java", "-Xmx200m", "-jar", "/interlude/app.jar" ]
 
-ADD "target/server-two-1.0-SNAPSHOT.jar" app.jar
-ENTRYPOINT [ "sh", "-c", "java -jar /app.jar" ]
+EXPOSE 2020

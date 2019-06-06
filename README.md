@@ -1,4 +1,4 @@
 ```
-mvn clean install
-docker-compose up --build
+mvn package
+docker-compose up
 ```

@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: config
+  profiles:
+    active: composite
+  cloud:
+    config:
+      server:
+        composite:
+          - type: native
+            search-locations: classpath:/shared
+  security:
+    user:
+      name: root
+      password: admin
+
+server:
+  port: 8888
+
