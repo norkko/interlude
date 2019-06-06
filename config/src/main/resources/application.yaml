@@ -9,10 +9,10 @@ spring:
         composite:
           - type: native
             search-locations: classpath:/shared
-  security:
-    user:
-      name: root
-      password: admin
+#  security:
+#    user:
+#      name: root
+#      password: admin
 
 server:
   port: 8888

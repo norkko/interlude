@@ -4,6 +4,3 @@ spring:
   cloud:
     config:
       uri: http://config:8888
-      fail-fast: true
-      password: admin
-      username: root

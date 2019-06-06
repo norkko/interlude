@@ -1,8 +1,0 @@
-spring:
-  application:
-    name: server-two
-  cloud:
-    config:
-      uri: http://config:8888
-      username: root
-      password: admin

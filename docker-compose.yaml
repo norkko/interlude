@@ -2,6 +2,7 @@ version: '3.7'
 services:
   config:
     container_name: config
+    hostname: config
     build: ./config
     ports:
       - 8888:8888
@@ -11,13 +12,5 @@ services:
     build: ./server-one
     ports:
       - 8080:8080
-    depends_on:
-      - config
-
-  server-two:
-    container_name: server-two
-    build: ./server-two
-    ports:
-      - 2020:2020
     depends_on:
       - config
