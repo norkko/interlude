@@ -34,8 +34,7 @@
 
     <modules>
         <module>config</module>
-        <module>server-one</module>
-        <module>server-two</module>
+        <module>service</module>
     </modules>
 
 </project>
