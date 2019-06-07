@@ -11,7 +11,9 @@ services:
     build: ./service
     ports:
       - 8080:8080
-    links:
-      - eureka
-    depends_on:
-      - eureka
+
+  auth-service:
+    container_name: auth
+    build: ./auth-service
+    ports:
+      - 5000:5000
