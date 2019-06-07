@@ -1,19 +1,27 @@
 version: '3.7'
 services:
   eureka:
-    container_name: eureka
     build: ./eureka
     ports:
       - 8761:8761
 
   service:
-    container_name: service
     build: ./service
     ports:
       - 8080:8080
 
+  auth-mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_DATABASE: admin
+    ports:
+      - 3306:3306
+
   auth-service:
-    container_name: auth
     build: ./auth-service
     ports:
       - 5000:5000

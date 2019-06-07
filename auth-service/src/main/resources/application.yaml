@@ -4,10 +4,23 @@ server:
 spring:
   application:
     name: auth-service
+  datasource:
+    url: jdbc:mysql://auth-mysql:3306/admin
+    username: admin
+    password: admin
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
 eureka:
   client:
     serviceUrl:
       defaultZone: http://eureka:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
 
 logging:
   level:
