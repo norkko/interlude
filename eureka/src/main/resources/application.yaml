@@ -2,15 +2,12 @@ server:
   port: 8761
 
 spring:
-  security:
   application:
     name: eureka
 
 eureka:
   client:
-    registerWithEureka: false
-    fetchRegistry: false
-
-logging:
-  level:
-    ROOT: INFO
+    register-with-eureka: false
+    fetch-registry: false
+  instance:
+    prefer-ip-address: true

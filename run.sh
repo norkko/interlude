@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+rm -rf ./auth-service/target ./eureka/target
 mvn package
 if [[ "$?" -ne 0 ]] ; then
   echo 'mvn package failed'; exit $rc

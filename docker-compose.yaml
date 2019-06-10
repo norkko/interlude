@@ -1,14 +1,16 @@
-version: '3.7'
+version: '3'
 services:
   eureka:
     build: ./eureka
     ports:
       - 8761:8761
 
-  service:
-    build: ./service
+  auth:
+    build: ./auth
     ports:
-      - 8080:8080
+      - 5000:5000
+    depends_on:
+      - auth-mysql
 
   auth-mysql:
     image: mysql:5.7
@@ -21,7 +23,7 @@ services:
     ports:
       - 3306:3306
 
-  auth-service:
-    build: ./auth-service
+  account:
+    build: ./account
     ports:
-      - 5000:5000
+      - 6000:6000
