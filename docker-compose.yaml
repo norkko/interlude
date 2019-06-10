@@ -9,6 +9,10 @@ services:
     build: ./account
     ports:
       - 6000:6000
+    environment:
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_DATABASE: account
     depends_on:
       - account-mysql
 

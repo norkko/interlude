@@ -12,6 +12,12 @@ public class AccountController {
     @Autowired
     AccountService accountService;
 
+    @ResponseBody
+    @RequestMapping(method = RequestMethod.GET)
+    public String index() {
+        return "..";
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     public void createUser(@RequestBody Account account) {
         accountService.save(account);
