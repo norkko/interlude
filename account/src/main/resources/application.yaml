@@ -1,0 +1,15 @@
+server:
+  port: 6000
+  servlet:
+    context-path: /auth
+
+spring:
+  application:
+    name: account
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka:8761/eureka/
+  instance:
+    prefer-ip-address: true
