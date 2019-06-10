@@ -22,3 +22,8 @@ services:
       MYSQL_DATABASE: account
     ports:
       - 3306:3306
+
+  tbd:
+    build: ./tbd
+    ports:
+      - 8080:8080

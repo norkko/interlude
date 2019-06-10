@@ -35,5 +35,6 @@
 	<modules>
 		<module>eureka</module>
 		<module>account</module>
+		<module>tbd</module>
 	</modules>
 </project>
