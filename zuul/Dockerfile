@@ -1,7 +1,7 @@
 FROM openjdk:8-jdk-alpine
 MAINTAINER August
 
-ADD target/tbd.jar /interlude/app.jar
+ADD target/zuul.jar /interlude/app.jar
 CMD ["java", "-Xmx200m", "-jar", "/interlude/app.jar"]
 
-EXPOSE 7000
+EXPOSE 8080

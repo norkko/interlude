@@ -27,7 +27,7 @@ public class Controller {
 
     @ResponseBody
     @RequestMapping(method = RequestMethod.GET)
-    public List<Object> createUser() {
+    public List<Object> fetchUsers() {
         logger.info("fetching everyone");
         return accountClient.getUsers();
     }

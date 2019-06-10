@@ -30,4 +30,9 @@ services:
   tbd:
     build: ./tbd
     ports:
+      - 7000:7000
+
+  zuul:
+    build: ./zuul
+    ports:
       - 8080:8080
