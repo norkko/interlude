@@ -5,25 +5,20 @@ services:
     ports:
       - 8761:8761
 
-  auth:
-    build: ./auth
+  account:
+    build: ./account
     ports:
-      - 5000:5000
+      - 6000:6000
     depends_on:
-      - auth-mysql
+      - account-mysql
 
-  auth-mysql:
+  account-mysql:
     image: mysql:5.7
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
-      MYSQL_DATABASE: admin
+      MYSQL_DATABASE: account
     ports:
       - 3306:3306
-
-  account:
-    build: ./account
-    ports:
-      - 6000:6000

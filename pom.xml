@@ -35,6 +35,5 @@
 	<modules>
 		<module>eureka</module>
 		<module>account</module>
-		<module>auth</module>
 	</modules>
 </project>
