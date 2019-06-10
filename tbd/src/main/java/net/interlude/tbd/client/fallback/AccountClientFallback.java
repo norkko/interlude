@@ -6,6 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class AccountClientFallback implements AccountClient {
 
@@ -14,6 +16,12 @@ public class AccountClientFallback implements AccountClient {
     @Override
     public void createUser(Account account) {
         logger.warn("Unable to create user " + account.getUsername());
+    }
+
+    @Override
+    public List<Object> getUsers() {
+        logger.warn("Unable to fetch all users");
+        return null;
     }
 
 }

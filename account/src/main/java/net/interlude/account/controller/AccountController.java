@@ -5,6 +5,8 @@ import net.interlude.account.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/account")
 public class AccountController {
@@ -14,8 +16,8 @@ public class AccountController {
 
     @ResponseBody
     @RequestMapping(method = RequestMethod.GET)
-    public String index() {
-        return "..";
+    public List<Account> index() {
+        return accountService.findAll();
     }
 
     @RequestMapping(method = RequestMethod.POST)

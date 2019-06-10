@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -28,6 +29,11 @@ public class AccountServiceImpl implements AccountService {
         } catch (Exception e) {
             logger.warn("exception occurred " + e);
         }
+    }
+
+    @Override
+    public List<Account> findAll() {
+        return accountRepository.findAll();
     }
 
     @Override
