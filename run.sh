@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm -rf ./eureka/target ./account/target
+rm -rf ./eureka/target ./account/target ./tbd/target ./zuul/target
 mvn package
 if [[ "$?" -ne 0 ]] ; then
   echo 'mvn package failed'; exit $rc
