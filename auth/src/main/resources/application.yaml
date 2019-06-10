@@ -3,7 +3,11 @@ server:
 
 spring:
   application:
-    name: auth-service
+    name: auth
+  security:
+    user:
+      name: user
+      password: password
   datasource:
     url: jdbc:mysql://auth-mysql:3306/admin
     username: admin
@@ -19,9 +23,5 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://eureka:8761/eureka/
-    register-with-eureka: true
-    fetch-registry: true
-
-logging:
-  level:
-    ROOT: INFO
+  instance:
+    prefer-ip-address: true
