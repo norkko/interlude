@@ -8,5 +8,5 @@ import java.util.List;
 @Service
 public interface AccountService {
     void save(Account account);
-    List<Account> findAll();
+    Account findByUsername(String username);
 }

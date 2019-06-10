@@ -7,8 +7,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 @Component
 public class AccountServiceImpl implements AccountService {
 
@@ -19,11 +17,14 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public void save(Account account) {
-        logger.info("saving user " + account.getUsername());
         accountRepository.save(account);
+        Account createdUser = this.findByUsername(account.getUsername());
+        logger.info("fetching created used: " + createdUser.getUsername());
     }
 
-    @Override public List<Account> findAll() {
-        return accountRepository.findAll();
+    @Override
+    public Account findByUsername(String username) {
+        return accountRepository.findByUsername(username);
     }
+
 }
