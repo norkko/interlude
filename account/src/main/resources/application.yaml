@@ -7,9 +7,9 @@ spring:
   application:
     name: account
   datasource:
-    url: jdbc:mysql://account-mysql:3306/account
-    username: admin
-    password: admin
+    url: jdbc:mysql://account-mysql:3306/${MYSQL_DATABASE}
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     database: mysql
