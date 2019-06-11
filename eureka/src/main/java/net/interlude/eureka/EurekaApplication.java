@@ -17,7 +17,6 @@ public class EurekaApplication implements CommandLineRunner {
 		SpringApplication.run(EurekaApplication.class, args);
 	}
 
-
 	@Override
 	public void run(String... args) {
 		logger.info("Eureka service running");

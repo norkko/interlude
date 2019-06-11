@@ -28,6 +28,7 @@ public class AccountServiceImpl implements AccountService {
             logger.info("created used: " + this.findByUsername(account.getUsername()).get().getId());
         } catch (Exception e) {
             logger.warn("exception occurred " + e);
+            e.printStackTrace();
         }
     }
 

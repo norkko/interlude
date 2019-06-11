@@ -9,6 +9,15 @@ import java.util.Optional;
 
 @Repository
 public interface AccountRepository extends CrudRepository<Account, Integer> {
+
+    /**
+     * Returns a stored object queried by username field.
+     * @param username
+     */
     Optional<Account> findByUsername(String username);
+
+    /**
+     * Returns all stored objects.
+     */
     List<Account> findAll();
 }

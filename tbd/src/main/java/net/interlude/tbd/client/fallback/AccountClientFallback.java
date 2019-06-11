@@ -20,7 +20,7 @@ public class AccountClientFallback implements AccountClient {
 
     @Override
     public List<Object> getUsers() {
-        logger.warn("Unable to fetch all users");
+        logger.warn("Unable to fetch users");
         return null;
     }
 
