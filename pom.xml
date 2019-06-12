@@ -35,7 +35,7 @@
 	<modules>
 		<module>eureka</module>
 		<module>zuul</module>
-		<module>account</module>
+		<module>item-service</module>
 		<module>tbd</module>
 	</modules>
 </project>

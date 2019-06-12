@@ -5,9 +5,9 @@ server:
 
 spring:
   application:
-    name: account
+    name: item-service
   datasource:
-    url: jdbc:mysql://account-mysql:3306/${MYSQL_DATABASE}
+    url: jdbc:mysql://item-mysql:3306/${MYSQL_DATABASE}
     username: ${MYSQL_USER}
     password: ${MYSQL_PASSWORD}
   jpa:

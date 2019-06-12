@@ -4,7 +4,7 @@ Interlude is a project mainly playing around with the microservice architecture 
 ## Project Layout
 * [Discovery Service](https://github.com/august-norkko/interlude/tree/master/eureka) - Eureka discovery service
 * [Gateway Service](https://github.com/august-norkko/interlude/tree/master/zuul) - Zuul gateway for routing traffic
-* [Account](https://github.com/august-norkko/interlude/tree/master/account) 
+* [Item](https://github.com/august-norkko/interlude/tree/master/item) 
 * [tbd](https://github.com/august-norkko/interlude/tree/master/tbd) 
 * ...
 

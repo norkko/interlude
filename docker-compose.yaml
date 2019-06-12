@@ -5,8 +5,8 @@ services:
     ports:
       - 8761:8761
 
-  account:
-    build: ./account
+  item-service:
+    build: ./item-service
     ports:
       - 6000:6000
     environment:
@@ -14,9 +14,9 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
     depends_on:
-      - account-mysql
+      - item-mysql
 
-  account-mysql:
+  item-mysql:
     image: mysql:5.7
     restart: always
     environment:
