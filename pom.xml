@@ -35,7 +35,8 @@
 	<modules>
 		<module>eureka</module>
 		<module>zuul</module>
-		<module>item-service</module>
 		<module>tbd</module>
+		<module>item-service</module>
+		<module>web-service</module>
 	</modules>
 </project>

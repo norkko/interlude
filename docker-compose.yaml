@@ -53,3 +53,8 @@ services:
     build: ./zuul
     ports:
       - 8080:8080
+
+  web-service:
+    build: ./web-service
+    ports:
+      - 4000:4000
