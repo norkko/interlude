@@ -4,6 +4,16 @@ server:
 spring:
   application:
     name: tbd
+  datasource:
+    url: jdbc:mysql://tbd-mysql:3306/${MYSQL_DATABASE}
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
 
 eureka:
   client:
