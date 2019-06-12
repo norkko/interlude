@@ -20,6 +20,10 @@ mvn package
 docker-compose up
 ```
 
----
+## Todos
+* Auth service (OAuth)
+
+* ...
+
 ### License
 MIT
