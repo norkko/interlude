@@ -15,17 +15,24 @@ Interlude is a project mainly playing around with the microservice architecture 
 * Maven
 
 ## Usage
-Each microservice is built as a container. In order to start the application you can run them simultaneously with docker-compose. Before however you need to package all of the microservices.
+Each microservice is built as a container. All containers are started simultaneously with docker-compose.
+Before running each module has to package, after that docker-compose can be run to boot up all microservices along with databases.
 
 ```
+# package
 mvn package
+
+# start app
 docker-compose up
+
+# should be available at:
+# http://localhost:8080/
 ```
 
 ## Todos
 * Auth service (OAuth)
 
-* ...
+* idk
 
 ### License
 MIT

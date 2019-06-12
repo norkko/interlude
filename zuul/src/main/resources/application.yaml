@@ -31,5 +31,7 @@ zuul:
     tbd:
       path: /tbd/**
       serviceId: tbd
-      stripPrefix: false
-      sensitiveHeaders:
+
+    web-service:
+      path: /**
+      serviceId: web-service

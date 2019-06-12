@@ -1,0 +1,27 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body, html {
+    font-family: 'Raleway', sans-serif;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    margin-bottom: 20px;
+}
+
+a:hover {
+    color: #000;
+}
+
+.parent-div {
+    margin-top: 75px;
+}
+
+#github-logo:hover { opacity: 0.75; }
