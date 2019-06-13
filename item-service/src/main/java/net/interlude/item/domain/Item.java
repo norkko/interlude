@@ -1,21 +1,26 @@
-package net.interlude.item.domain;
+package net.interlude.item.domain
 
-import lombok.Data;
+import lombok.Data
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
+import javax.persistence.Id
 
-@Data
+
 @Entity
-public class Item {
-
+class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    internal var id: Int = 0
+    internal var name: String? = null
+    internal var description: String? = null
 
-    String name;
+    constructor(id: Int, name: String?, description: String?) {
+        this.id = id
+        this.name = name
+        this.description = description
+    }
 
-    String description;
+
 }
