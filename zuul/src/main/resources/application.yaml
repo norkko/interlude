@@ -32,6 +32,10 @@ zuul:
       path: /tbd/**
       serviceId: tbd
 
+    item-service:
+      path: /items/**
+      serviceId: item-service
+
     web-service:
       path: /**
       serviceId: web-service
