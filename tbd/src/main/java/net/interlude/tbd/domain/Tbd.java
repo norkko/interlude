@@ -1,4 +1,4 @@
-package net.interlude.item.domain;
+package net.interlude.tbd.domain;
 
 import lombok.Data;
 
@@ -9,10 +9,9 @@ import javax.persistence.Id;
 
 @Data
 @Entity
-public class Item {
+public class Tbd {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
-    String name;
-    String description;
+    String str;
 }

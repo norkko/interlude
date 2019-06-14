@@ -1,4 +1,4 @@
-package net.interlude.zuul.filter;
+package net.interlude.zuul.config;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;

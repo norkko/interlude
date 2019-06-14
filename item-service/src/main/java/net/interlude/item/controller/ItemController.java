@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/items")
 public class ItemController {
 
     @Autowired
@@ -19,7 +18,7 @@ public class ItemController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public void createUser(@RequestBody Item item) {
+    public void registerItem(@RequestBody Item item) {
         itemService.registerItem(item);
     }
 

@@ -1,6 +1,6 @@
 package net.interlude.zuul;
 
-import net.interlude.zuul.filter.CustomZuulFilter;
+import net.interlude.zuul.config.CustomZuulFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;

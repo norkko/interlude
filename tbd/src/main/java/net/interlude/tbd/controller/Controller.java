@@ -12,13 +12,13 @@ public class Controller {
     ItemClient itemClient;
 
     @RequestMapping(method = RequestMethod.POST)
-    public void createUser(@RequestBody Item item) {
+    public void registerItem(@RequestBody Item item) {
         itemClient.registerItem(item);
     }
 
     @ResponseBody
     @RequestMapping(method = RequestMethod.GET)
-    public Iterable<Object> fetchUsers() {
+    public Iterable<Object> fetchItems() {
         return itemClient.fetchItems();
     }
 

@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(name = "item-service", fallback = ItemClientFallback.class)
 public interface ItemClient {
 
-    @RequestMapping(method = RequestMethod.POST, value = "/v1/items", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(method = RequestMethod.POST, value = "/", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     void registerItem(Item item);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/v1/items")
+    @RequestMapping(method = RequestMethod.GET, value = "/")
     Iterable<Object> fetchItems();
 
 }
