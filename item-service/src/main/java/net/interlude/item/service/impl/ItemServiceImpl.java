@@ -17,13 +17,13 @@ public class ItemServiceImpl implements ItemService {
     ItemRepository itemRepository;
 
     @Override
-    public void registerItem(Item itemDetails) {
+    public void registerItem(Item created) {
         try {
+            logger.info("registering item " + created.getName());
             Item item = new Item();
-            item.setName(itemDetails.getName());
-            item.setDescription(itemDetails.getDescription());
+            item.setName(created.getName());
+            item.setDescription(created.getDescription());
             itemRepository.save(item);
-            logger.info("registered item " + this.findByName(item.getName()).getId());
         } catch (Exception e) {
             logger.warn("exception occurred registering item: " + e);
         }
@@ -33,6 +33,7 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public Iterable<Item> findAll() {
         try {
+            logger.info("fetching all items");
             return itemRepository.findAll();
         } catch (Exception e) {
             logger.warn("exception occurred fetching items: " + e);
@@ -41,13 +42,26 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public Item findByName(String name) {
+    public void removeById(int id) {
         try {
-            return itemRepository.findByName(name);
+            logger.info("removing item " + id);
+            itemRepository.removeById(id);
         } catch (Exception e) {
-            logger.warn("exception occurred finding: " + name);
+            logger.warn("exception occurred removing item " + id);
         }
-        return null;
+
+    }
+
+    @Override
+    public void updateItem(int id, Item update) {
+        try {
+            Item item = itemRepository.findById(id);
+            item.setName(update.getName());
+            item.setDescription(update.getDescription());
+            itemRepository.save(item);
+        } catch (Exception e) {
+            logger.warn("exception occurred updating item: " + id);
+        }
     }
 
 }

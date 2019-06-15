@@ -18,8 +18,14 @@ public interface ItemService {
     Iterable<Item> findAll();
 
     /**
-     * Returns a registered item queried by name field.
-     * @param name
+     * Removed a registered item.
+     * @param id
      */
-    Item findByName(String name);
+    void removeById(int id);
+
+    /**
+     * Updates a registered item.
+     * @param id
+     */
+    void updateItem(int id, Item item);
 }

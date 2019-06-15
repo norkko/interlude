@@ -14,25 +14,40 @@ Interlude is a project mainly playing around with the microservice architecture 
 * Docker
 * Maven
 
-## Usage
-Each microservice is built as a container. All containers are started simultaneously with docker-compose.
-Before running each module has to package, after that docker-compose can be run to boot up all microservices along with databases.
+## Installation and deployment
 
-```
-# package
+```bash
+# Package modules
 mvn package
 
-# start app
+# Deploy with compose
 docker-compose up
-
-# should be available at:
-# http://localhost:8080/
 ```
+
+## Endpoints
+- [localhost:8080]() Application frontend
+- [localhost:8761]() Eureka dashboard
+
+### Rest API
+##### Item service
+||||
+| ---- | -------------------- | ----------------- |
+| GET  | localhost:8080/items | fetches all items |
+||||
+| POST | localhost:8080/items | register a new item |
+||||
+| DELETE | localhost:8080/items/_id_ | removes a registered item |
+||||
+| PUT | localhost:8080/items/_id_ | updates a registered item |
+||||
+
+##### tbd service
+
+##### ...
 
 ## Todos
 * Auth service (OAuth)
-
-* idk
+* Kubernetes deployment
 
 ### License
 MIT
