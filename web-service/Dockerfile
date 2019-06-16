@@ -4,4 +4,4 @@ MAINTAINER August
 ADD target/web-service.jar /interlude/app.jar
 CMD ["java", "-Xmx200m", "-jar", "/interlude/app.jar"]
 
-EXPOSE 8080
+EXPOSE 4000

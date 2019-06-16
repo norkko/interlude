@@ -14,16 +14,16 @@ Interlude is a project mainly playing around with the microservice architecture 
 * Docker
 * Maven
 
-## Installation and deployment
-
+## Running application
+Application can be run with images pushed to docker hub.
 ```bash
-# Package modules
-mvn package
-
-# Deploy with compose
 docker-compose up
 ```
-
+Building with source requires packaging of all microservices.
+```bash
+mvn package
+docker-compose -f docker-compose.yaml -f docker-compose.dev.yaml up
+```
 ## Endpoints
 - [localhost:8080]() Application frontend
 - [localhost:8761]() Eureka dashboard
