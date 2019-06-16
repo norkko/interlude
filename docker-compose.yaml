@@ -1,12 +1,12 @@
 version: '3'
 services:
   eureka:
-    build: ./eureka
+    image: aggelol/eureka
     ports:
       - 8761:8761
 
   item-service:
-    build: ./item-service
+    image: aggelol/item-service
     environment:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
@@ -15,7 +15,7 @@ services:
       - item-mysql
 
   item-mysql:
-    build: ./mysql
+    image: aggelol/item-mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -26,7 +26,7 @@ services:
       - 3306:3306
 
   tbd:
-    build: ./tbd
+    image: aggelol/tbd
     environment:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
@@ -35,7 +35,7 @@ services:
       - tbd-mysql
 
   tbd-mysql:
-    build: ./mysql
+    image: aggelol/tbd-mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -46,9 +46,9 @@ services:
       - 3307:3306
 
   zuul:
-    build: ./zuul
+    image: aggelol/zuul
     ports:
       - 8080:8080
 
   web-service:
-    build: ./web-service
+    image: aggelol/web-service
