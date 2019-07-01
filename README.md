@@ -15,7 +15,7 @@ Interlude is a project mainly playing around with the microservice architecture 
 * Maven
 
 ## Running application
-Run with docker-dub images
+Run with docker-hub images
 ```bash
 docker-compose up
 ```
@@ -23,7 +23,7 @@ Build with source, `docker-compose.dev.yaml` inherits configuration from `docker
 ```bash
 mvn package
 
-docker-compose -f docker-compose.yaml -f docker-compose.dev.yaml up
+docker-compose -f docker-compose.yaml -f docker-compose.dev.yaml up --build --no-orphan
 ```
 
 ## Todos
