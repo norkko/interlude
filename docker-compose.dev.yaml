@@ -34,3 +34,13 @@ services:
     build: ./web-service
     ports:
       - 4000:4000
+
+  auth-service:
+    build: ./auth-service
+    ports:
+      - 5000:5000
+
+  auth-mysql:
+    build: ./mysql
+    ports:
+      - 3308:3306

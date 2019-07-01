@@ -52,3 +52,10 @@ services:
 
   web-service:
     image: aggelol/web-service
+
+  # no docker hub imgs
+  auth-service:
+    build: ./auth-service
+
+  auth-mysql:
+    build: ./mysql

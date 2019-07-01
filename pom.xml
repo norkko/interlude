@@ -38,5 +38,6 @@
 		<module>tbd</module>
 		<module>item-service</module>
 		<module>web-service</module>
-	</modules>
+        <module>auth-service</module>
+    </modules>
 </project>
