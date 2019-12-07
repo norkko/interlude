@@ -5,8 +5,8 @@ if [[ "$?" -ne 0 ]] ; then
 else
   if [ "$1" ]; then
   	yes Y |docker-compose rm
-    docker-compose -f docker-compose.yaml -f docker-compose.dev.yaml up --build
+    docker-compose up --build
   else 
-  	docker-compose -f docker-compose.yaml -f docker-compose.dev.yaml up
+  	docker-compose up
   fi
 fi

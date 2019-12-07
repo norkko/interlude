@@ -1,21 +1,23 @@
 version: '3'
 services:
   eureka:
-    image: aggelol/eureka
+    build: ./eureka
     ports:
       - 8761:8761
 
   item-service:
-    image: aggelol/item-service
+    build: ./item-service
     environment:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
+    ports:
+      - 6000:6000
     depends_on:
       - item-mysql
 
   item-mysql:
-    image: aggelol/item-mysql
+    build: ./mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -26,16 +28,18 @@ services:
       - 3306:3306
 
   tbd:
-    image: aggelol/tbd
+    build: ./tbd
     environment:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
+    ports:
+      - 7000:7000
     depends_on:
       - tbd-mysql
 
   tbd-mysql:
-    image: aggelol/tbd-mysql
+    build: ./mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -46,16 +50,19 @@ services:
       - 3307:3306
 
   zuul:
-    image: aggelol/zuul
+    build: ./zuul
     ports:
       - 8080:8080
 
   web-service:
-    image: aggelol/web-service
+    build: ./web-service
+    ports:
+      - 4000:4000
 
-  # no docker hub imgs
   auth-service:
     build: ./auth-service
+    ports:
+      - 5000:5000
 
   auth-mysql:
     build: ./mysql
