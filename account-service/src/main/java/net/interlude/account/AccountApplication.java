@@ -1,4 +1,4 @@
-package net.interlude.auth;
+package net.interlude.account;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,21 +16,21 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableEurekaClient
 @SpringBootApplication
 @EnableFeignClients
-public class AuthApplication implements CommandLineRunner {
+public class AccountApplication implements CommandLineRunner {
 
-    private static final Logger logger = LoggerFactory.getLogger(AuthApplication.class);
+    private static final Logger logger = LoggerFactory.getLogger(AccountApplication.class);
 
     public static void main(String[] args) {
-        SpringApplication.run(AuthApplication.class, args);
+        SpringApplication.run(AccountApplication.class, args);
     }
 
     @Override
     public void run(String... args) {
-        logger.info("Auth service running");
+        logger.info("Account service running");
     }
 
     @GetMapping("/")
     public String index() {
-        return "hi from auth service";
+        return "hi from account service";
     }
 }

@@ -1,13 +1,11 @@
 server:
-  servlet:
-    context-path: /uaa
-  port: 6000
+  port: 4000
 
 spring:
   application:
-    name: auth-service
+    name: account-service
   datasource:
-    url: jdbc:mysql://auth-mysql:3306/${MYSQL_DATABASE}
+    url: jdbc:mysql://account-mysql:3306/${MYSQL_DATABASE}
     username: ${MYSQL_USER}
     password: ${MYSQL_PASSWORD}
   jpa:

@@ -33,11 +33,9 @@
 	</dependencyManagement>
 
 	<modules>
-		<module>eureka</module>
-		<module>zuul</module>
-		<module>tbd</module>
-		<module>item-service</module>
-		<module>web-service</module>
-        <module>auth-service</module>
+		<module>eureka-service</module>
+		<module>zuul-service</module>
+		<module>auth-service</module>
+		<module>account-service</module>
     </modules>
 </project>

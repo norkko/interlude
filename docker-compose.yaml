@@ -1,23 +1,22 @@
 version: '3'
 services:
   eureka:
-    build: ./eureka
+    build: ./eureka-service
     ports:
       - 8761:8761
 
-  item-service:
-    build: ./item-service
-    environment:
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
+  zuul:
+    build: ./zuul-service
     ports:
-      - 6000:6000
-    depends_on:
-      - item-mysql
+      - 8080:8080
 
-  item-mysql:
-    build: ./mysql
+  account-service:
+    build: ./account-service
+    ports:
+      - 4000:4000
+
+  account-mysql:
+    image: mysql:5.7
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -27,19 +26,13 @@ services:
     ports:
       - 3306:3306
 
-  tbd:
-    build: ./tbd
-    environment:
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
+  auth-service:
+    build: ./auth-service
     ports:
-      - 7000:7000
-    depends_on:
-      - tbd-mysql
+      - 6000:6000
 
-  tbd-mysql:
-    build: ./mysql
+  auth-mysql:
+    image: mysql:5.7
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -48,29 +41,3 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
     ports:
       - 3307:3306
-
-  zuul:
-    build: ./zuul
-    ports:
-      - 8080:8080
-
-  web-service:
-    build: ./web-service
-    ports:
-      - 4000:4000
-
-  auth-service:
-    build: ./auth-service
-    ports:
-      - 5000:5000
-
-  auth-mysql:
-    build: ./mysql
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-    ports:
-      - 3308:3306
