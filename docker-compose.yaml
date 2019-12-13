@@ -14,6 +14,10 @@ services:
     build: ./account-service
     ports:
       - 4000:4000
+    environment:
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
 
   account-mysql:
     image: mysql:5.7
@@ -30,6 +34,10 @@ services:
     build: ./auth-service
     ports:
       - 6000:6000
+    environment:
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
 
   auth-mysql:
     image: mysql:5.7
