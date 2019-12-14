@@ -5,17 +5,16 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/")
 @EnableEurekaClient
+@EnableDiscoveryClient
 @SpringBootApplication
 @EnableFeignClients
+@EnableCircuitBreaker
 public class AccountApplication implements CommandLineRunner {
 
     private static final Logger logger = LoggerFactory.getLogger(AccountApplication.class);
@@ -27,10 +26,5 @@ public class AccountApplication implements CommandLineRunner {
     @Override
     public void run(String... args) {
         logger.info("Account service running");
-    }
-
-    @GetMapping("/")
-    public String index() {
-        return "hi from account service";
     }
 }
